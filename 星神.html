@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>崩坏：星穹铁道——星神</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo"></div>
+      <div class="toggle"></div>
+    </header>
+    <section class="showcase">
+      <div class="shell">
+        <div class="card">
+          <div class="box">
+            <img src="../images/存护.jpg" />
+          </div>
+          <div class="character">
+            <img src="../images/存护.jpg" />
+          </div>
+          <h4>存护</h4>
+        </div>
+        <div class="card">
+          <div class="box">
+            <img src="../images/记忆.jpg" />
+          </div>
+          <div class="character">
+            <img src="../images/记忆.jpg" />
+          </div>
+          <h4>记忆</h4>
+        </div>
+        <div class="card">
+          <div class="box">
+            <img src="../images/巡猎.jpg" />
+          </div>
+          <div class="character">
+            <img src="../images/巡猎.jpg" />
+          </div>
+          <h4>巡猎</h4>
+        </div>
+        <div class="card">
+          <div class="box">
+            <img src="../images/毁灭.jpg" />
+          </div>
+          <div class="character">
+            <img src="../images/毁灭.jpg" />
+          </div>
+          <h4>毁灭</h4>
+        </div>
+        <div class="card">
+          <div class="box">
+            <img src="../images/虚无.jpg" />
+          </div>
+          <div class="character">
+            <img src="../images/虚无.jpg" />
+          </div>
+          <h4>虚无</h4>
+        </div>
+        <div class="card">
+          <div class="box">
+            <img src="../images/丰饶.jpg" />
+          </div>
+          <div class="character">
+            <img src="../images/丰饶.jpg" />
+          </div>
+          <h4>丰饶</h4>
+        </div>
+        <div class="card">
+          <div class="box">
+            <img src="../images/智识.jpg" />
+          </div>
+          <div class="character">
+            <img src="../images/智识.jpg" />
+          </div>
+          <h4>智识</h4>
+        </div>
+        <div class="card">
+          <div class="box">
+            <img src="../images/同谐.jpg" />
+          </div>
+          <div class="character">
+            <img src="../images/同谐.jpg" />
+          </div>
+          <h4>同谐</h4>
+        </div>
+      </div>
+    </section>
+    <div class="menu">
+      <ul>
+        <li><a href="index.html" target="_self">首页</a></li>
+        <li><a href="星神.html" target="_self">星神</a></li>
+        <li><a href="帕姆展览馆.html" target="_self">帕姆展览馆</a></li>
+        <li><a href="我们的旅途.html" target="_self">我们的旅途</a></li>
+        <li><a href="HOYO-Mix.html" target="_self">HOYO-Mix</a></li>
+      </ul>
+    </div>
+
+    <script>
+      const menuToggle = document.querySelector(".toggle");
+      const showcase = document.querySelector(".showcase");
+
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        showcase.classList.toggle("active");
+      });
+    </script>
+  </body>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background-size: cover;
+    }
+
+    .shell {
+      max-width: 1400px;
+      min-width: 1400px;
+      margin: 0 auto;
+      margin-top: 5rem;
+      height: 650px;
+      display: flex;
+    }
+
+    .card {
+      flex-basis: 13%;
+      position: relative;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .card:not(:nth-child(1)) {
+      margin-left: 20px;
+    }
+
+    .card:hover {
+      overflow: initial;
+      transition: all 2s;
+    }
+
+    .box {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+      overflow: hidden;
+      border-radius: 10px;
+      background-image: linear-gradient(180deg, #212121, #5454545c, #0b0b0bce);
+    }
+
+    .box > img {
+      object-fit: cover;
+      width: 150%;
+      height: 150%;
+      transform: translateX(-50%) translateY(-50%);
+      left: 50%;
+      top: 50%;
+      position: relative;
+      background: rgba(72, 73, 75, 0.5);
+      z-index: -1;
+
+      transition: all 2s linear;
+    }
+
+    .card:hover > .box img {
+      opacity: 0;
+      transform: scale(2) translateX(30%) translateY(0%);
+      z-index: -2;
+    }
+
+    .card:hover > .box {
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .card > h4 {
+      position: absolute;
+      display: block;
+      width: 120px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.2);
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, -35%);
+      font-size: 28px;
+      z-index: 100;
+      transition: 0.2s;
+    }
+
+    .card:hover h4 {
+      color: #fff;
+      transform: translate(-50%, 250%);
+    }
+
+    .card:hover .character > img {
+      opacity: 1;
+      transform: translateX(-25%);
+      transition: all 1.4s;
+    }
+
+    .card > .character {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      pointer-events: none;
+      transform: scale(1.2) translateX(19%) translateY(-5%);
+      transition: all 1.5s;
+      border-radius: 25%;
+    }
+
+    .character > img {
+      width: 700px;
+      height: 700px;
+      object-fit: contain;
+      opacity: 0;
+      position: relative;
+      z-index: -10;
+      transition: all 1s;
+    }
+    .showcase {
+        overflow: hidden;
+        padding: 60px;
+        display: flex;
+        flex-direction: row;
+       background:linear-gradient(rgb(6, 3, 26),rgb(8, 5, 43),rgb(27, 25, 32),rgba(118, 117, 121, 0.963),rgb(190, 191, 194),rgb(4, 5, 32),rgb(20, 18, 36),rgb(36, 39, 79),rgb(0, 0, 0)) ;}
+  </style>
+</html>

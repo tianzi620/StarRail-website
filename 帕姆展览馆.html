@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>崩坏：星穹铁道——帕姆展览馆</title>
+    <style>
+      /* .big-bg 
+      {
+        background-color: red;
+       } */
+    </style>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        background-color: #110b21;
+      }
+
+      /* 设置滚动条 */
+      ::-webkit-scrollbar {
+        width: 1px;
+        height: 1px;
+      }
+
+      .images img {
+        border: #fff solid 10px;
+        max-width: 45vh;
+        max-height: 50vh;
+        transition: 0.5s;
+      }
+
+      .images:hover img {
+        box-shadow: 0 10px 30px #86c4f7;
+        transform: scale(1.05);
+      }
+
+      .showcase {
+        overflow: hidden;
+        padding: 60px;
+        display: flex;
+        flex-direction: row;
+       background:linear-gradient(rgb(35, 42, 1),rgb(11, 9, 49),rgb(5, 1, 19),rgba(18, 1, 74, 0.963),rgb(25, 36, 5)) ;
+}
+
+      /* 创建一个水平滚动的包裹容器，用于展示内容 */
+      .shell {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container {
+        /*旋转90度，向上平移一个视口高度的距离 */
+        transform: rotate(-90deg) translate3d(0vw, -150vh, 0);
+        width: 100vh;
+        height: 100vw;
+        /* 设置变换的原点为右上角 */
+        transform-origin: right top;
+        overflow-x: hidden;
+        /* 设置3D透视效果 */
+        perspective: 1px;
+        transform-style: preserve-3d;
+        margin-left: 0px;
+      }
+
+      /* 创建一个图片容器，用于展示图片 */
+      .images {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* 设置最小高度为视口高度的40% */
+        min-height: 40vh;
+        /* 设置变换的原点为中心点 */
+        transform-origin: 50% 50%;
+        /* 旋转90度，向前平移0.1px，放大1.1倍，向右平移0px，向下平移2vh */
+        transform: rotate(90deg) translateZ(0.1px) scale(1.1) translateX(0px)
+          translateY(2vh);
+        transition: 1s;
+      }
+
+      .slower {
+        transform: rotate(90deg) translateZ(-0.12px) scale(1.3) translateX(0%)
+          translateY(-8vh);
+      }
+
+      .slower1 {
+        transform: rotate(90deg) translateZ(-0.25px) scale(1.35) translateX(0%)
+          translateY(2vh);
+      }
+
+      .slower-down {
+        transform: rotate(90deg) translateZ(-0.1px) scale(1) translateX(0%)
+          translateY(16vh);
+      }
+
+      .faster {
+        transform: rotate(90deg) translateZ(-0.05px) scale(1.1) translateX(0%)
+          translateY(15vh);
+      }
+
+      .faster1 {
+        transform: rotate(90deg) translateZ(0.05px) scale(1.4) translateX(0%)
+          translateY(10vh);
+      }
+
+      .fastest {
+        transform: rotate(90deg) translateZ(0.22px) scale(0.7) translateX(-10vh)
+          translateY(-15vh);
+      }
+
+      .vertical {
+        transform: rotate(90deg) translateZ(-0.1px) scale(1.6) translateX(0%)
+          translateY(-3vh);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo"></div>
+      <div class="toggle"></div>
+    </header>
+
+    <section class="showcase">
+      <div class="shell big-bg">
+        <div class="tall">
+          <div class="container">
+            <div class="images slower">
+              
+            </div>
+            <div class="images faster">
+              <img src="../images/2.jpg" />
+            </div>
+            <div class="images vertical">
+              <img src="../images/3.jpg" />
+            </div>
+            <div class="images slower-down">
+              <img src="../images/4.jpg" />
+            </div>
+            <div class="images">
+              <img src="../images/5.jpg" />
+            </div>
+            <div class="images slower">
+              <img src="../images/6.jpg" />
+            </div>
+            <div class="images faster1">
+              <img src="../images/7.jpg" />
+            </div>
+            <div class="images slower1">
+              <img src="../images/8.jpg" />
+            </div>
+            <div class="images">
+              <img src="../images/9.jpg" />
+            </div>
+            <div class="images slower">
+              <img src="../images/10.jpg" />
+            </div>
+            <div class="images faster">
+              <img src="../images/11.jpg" />
+            </div>
+            <div class="images vertical">
+              <img src="../images/12.jpg" />
+            </div>
+            <div class="images slower-down">
+              <img src="../images/13.jpg" />
+            </div>
+            <div class="images">
+              <img src="../images/14.jpg" />
+            </div>
+            <div class="images slower">
+              <img src="../images/15.jpg" />
+            </div>
+            <div class="images faster1">
+              <img src="../images/16.jpg" />
+            </div>
+            <div class="images slower1">
+              <img src="../images/17.jpg" />
+            </div>
+            <div class="images">
+              <img src="../images/18.jpg" />
+            </div>
+            <div class="images slower">
+              <img src="../images/19.jpg" />
+            </div>
+            <div class="images faster">
+              <img src="../images/20.jpg" />
+            </div>
+            <div class="images vertical">
+              <img src="../images/21.jpg" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="menu">
+      <ul>
+        <li><a href="index.html" target="_self">首页</a></li>
+        <li><a href="星神.html" target="_self">星神</a></li>
+        <li><a href="帕姆展览馆.html" target="_self">帕姆展览馆</a></li>
+        <li><a href="我们的旅途.html" target="_self">我们的旅途</a></li>
+        <li><a href="HOYO-Mix.html" target="_self">HOYO-Mix</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
+
+<script></script>
+<script>
+  window.scrollTo({
+    top: 150, // 滚动到距离页面顶部1000px的位置
+    left: 0, // 滚动到距离页面左侧0px的位置
+    behavior: "smooth", // 平滑滚动
+  });
+  console.log(1);
+
+  const menuToggle = document.querySelector(".toggle");
+  const showcase = document.querySelector(".showcase");
+
+  menuToggle.addEventListener("click", () => {
+    menuToggle.classList.toggle("active");
+    showcase.classList.toggle("active");
+  });
+</script>

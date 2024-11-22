@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>崩坏：星穹铁道——我们的旅途</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .showcase {
+        padding: 0;
+        display: block;
+      }
+
+      .shell {
+        width: 100%;
+        position: relative;
+        padding: 80px 0;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+
+      .shell:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(99, 99, 99, 0.8);
+        content: "";
+      }
+
+      .header1 {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 80px;
+        position: relative;
+      }
+
+      .title {
+        color: #fff;
+        font-size: 46px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      .timeline {
+        display: flex;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        flex-direction: column;
+        max-width: 1000px;
+        position: relative;
+      }
+
+      .content-title {
+        font-weight: normal;
+        font-size: 66px;
+        margin: -10px 0 0 0;
+        transition: 0.4s;
+        padding: 0 10px;
+        box-sizing: border-box;
+        color: #fff;
+      }
+
+      .content-desc {
+        margin: 0;
+        font-size: 15px;
+        box-sizing: border-box;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 25px;
+      }
+
+      .timeline:before {
+        position: absolute;
+        left: 50%;
+        width: 2px;
+        height: 100%;
+        margin-left: -1px;
+        content: "";
+        background: rgba(255, 255, 255, 0.07);
+      }
+
+      .item {
+        padding: 40px 0;
+        opacity: 0.3;
+        filter: blur(2px);
+        transition: 0.5s;
+        box-sizing: border-box;
+        width: calc(50% - 40px);
+        display: flex;
+        position: relative;
+        transform: translateY(-80px);
+      }
+
+      .item:before {
+        content: attr(data-text);
+        letter-spacing: 3px;
+        width: 100%;
+        position: absolute;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 13px;
+        border-left: 2px solid rgba(255, 255, 255, 0.5);
+        top: 70%;
+        margin-top: -5px;
+        padding-left: 15px;
+        opacity: 0;
+        right: calc(-100% - 56px);
+        font: 900 20px "";
+        letter-spacing: 5px;
+      }
+
+      .item:nth-child(even) {
+        align-self: flex-end;
+      }
+
+      .item:nth-child(even):before {
+        right: auto;
+        text-align: right;
+        left: calc(-100% - 56px);
+        padding-left: 0;
+        border-left: none;
+        border-right: 2px solid rgba(255, 255, 255, 0.5);
+        padding-right: 15px;
+      }
+
+      .item--active {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0px);
+      }
+
+      .item--active:before {
+        top: 50%;
+        transition: 0.3s all 0.2s;
+        opacity: 1;
+      }
+
+      .item--active .content-title {
+        margin: -50px 0 20px 0;
+      }
+
+      .img {
+        max-width: 100%;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+      }
+
+      .subtitle {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 16px;
+        letter-spacing: 5px;
+        margin: 10px 0 0 0;
+        font-weight: normal;
+      }
+
+      .footer {
+        padding: 95px 0;
+        text-align: center;
+      }
+
+      .footer a {
+        color: #999;
+        display: inline-block;
+      }
+
+      @media only screen and (max-width: 767px) {
+        .item {
+          align-self: baseline !important;
+          width: 100%;
+          padding: 0 30px 150px 80px;
+        }
+
+        .item:before {
+          left: 10px !important;
+          padding: 0 !important;
+          top: 50px;
+          text-align: center !important;
+          width: 60px;
+          border: none !important;
+        }
+
+        .item:last-child {
+          padding-bottom: 40px;
+        }
+      }
+
+      @media only screen and (max-width: 767px) {
+        .timeline:before {
+          left: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo"></div>
+      <div class="toggle"></div>
+    </header>
+    <section class="showcase">
+      <div class="shell" id="shell">
+        <div class="header1"></div>
+        <div class="timeline">
+          <div class="item" data-text="「在第八日启程」">
+            <div class="content">
+              <img class="img" src="../images/2.7.jpg" />
+              <h2 class="content-title">2.7</h2>
+              <p class="content-desc">有人将会归来，有人正欲离去。梦境是如此朦胧不定——若想看清前路，必当回望往昔。</p>
+            </div>
+          </div>
+
+          <div class="item" data-text="「毗乃昆尼末法世记」">
+            <div class="content">
+              <img class="img" src="../images/2.6.jpg" />
+              <h2 class="content-title">2.6</h2>
+              <p class="content-desc">
+                终日笑歌舞，冥暮寝不醒——梦土如久置的蕉皮，遍布漆黑的污点，不可容忍！寻回正法，灭却末法之世吧！
+              </p>
+            </div>
+          </div>
+
+          <div class="item" data-text="「‍碧羽飞黄射天狼」">
+            <div class="content">
+              <img class="img" src="../images/2.5.jpg" />
+              <h2 class="content-title">2.5</h2>
+              <p class="content-desc">
+                天之将倾，群狼环伺，猎人力挽弓弧，逐驰无前；但真正的猎场，却在内心。
+              </p>
+            </div>
+          </div>
+
+          <div class="item" data-text="「明霄竞武试锋芒」">
+            <div class="content">
+              <img class="img" src="../images/2.4.jpg" />
+              <h2 class="content-title">2.4</h2>
+              <p class="content-desc">
+                演武仪典行将启幕，八方宾客纷至沓来。幽狱重牢之底，关押已久的恶兽爪牙蠢动。
+              </p>
+            </div>
+          </div>
+
+          <div class="item" data-text="「再见，匹诺康尼」">
+            <div class="content">
+              <img class="img" src="../images/2.3.jpg" />
+              <h2 class="content-title">2.3</h2>
+              <p class="content-desc">
+                匹诺康尼的开拓之旅迎来了美好的结局，是时候走向下一站了——而在那之前，向身后的不眠之夜做个正式道别吧。
+              </p>
+            </div>
+          </div>
+
+          <div class="item" data-text="「等醒来再哭泣」">
+            <div class="content">
+              <img class="img" src="../images/2.2.jpg" />
+              <h2 class="content-title">2.2</h2>
+              <p class="content-desc">记忆是梦的开场白，忘却是梦的谢幕礼。</p>
+            </div>
+          </div>
+
+          <div class="item" data-text="「狂热奔向深渊」">
+            <div class="content">
+              <img class="img" src="../images/2.1.jpg" />
+              <h2 class="content-title">2.1</h2>
+              <p class="content-desc">
+                在欢庆中泪湿，哀悼中欢笑，于最辛酸的糖浆中品出狂人的美梦。
+              </p>
+            </div>
+          </div>
+
+          <div class="item" data-text="「假如在午夜入梦」">
+            <div class="content">
+              <img class="img" src="../images/2.0.jpg" />
+              <h2 class="content-title">2.0</h2>
+              <p class="content-desc">
+                娶了红玫瑰，久而久之，红玫瑰就变成了墙上的一抹蚊子血，白玫瑰还是“床前明月光；
+                娶了白玫瑰，白玫瑰就是衣服上的一粒饭渣子，红的还是心口上的一颗朱砂痣。
+              </p>
+            </div>
+          </div>
+
+          <div class="item" data-text="「庸与神的冠冕」">
+            <div class="content">
+              <img class="img" src="../images/1.7.jpg" />
+              <h2 class="content-title">1.6</h2>
+              <p class="content-desc">
+                庸与天才，人性与神。于黄金年代察觉，一生斗争皆为荒谬的瞬间。
+              </p>
+            </div>
+          </div>
+
+          <div class="item" data-text="「迷离幻夜谈」">
+            <div class="content">
+              <img class="img" src="../images/1.6.jpg" />
+              <h2 class="content-title">1.5</h2>
+              <p class="content-desc">
+                幽府来使，列车怪客…航行在深黯的夜空，怪谲诡秘之事总是不期降临。
+              </p>
+            </div>
+          </div>
+
+          <div class="item" data-text="「冬梦激醒」">
+            <div class="content">
+              <img class="img" src="../images/1.5.jpg" />
+              <h2 class="content-title">1.4</h2>
+              <p class="content-desc">
+                一场梦魇的惊醒，一场久别的欢聚…阴霾消散，覆雪下的往事随霜而来。
+              </p>
+            </div>
+          </div>
+
+          <div class="item" data-text="「天镜映劫尘」">
+            <div class="content">
+              <img class="img" src="../images/1.4.jpg" />
+              <h2 class="content-title">1.3</h2>
+              <p class="content-desc">
+                玉镜高悬于天，映照劫余尘寰。即便星移斗转，往昔的灾影也未曾消散。
+              </p>
+            </div>
+          </div>
+
+          <div class="item" data-text="「仙骸有终」">
+            <div class="content">
+              <img class="img" src="../images/1.3.jpg" />
+              <h2 class="content-title">1.2</h2>
+              <p class="content-desc">
+                万物终有尽头，毋论仙凡。这绝非不仁的天罚，而是宽赦。
+              </p>
+            </div>
+          </div>
+
+          <div class="item" data-text="「银河漫游」">
+            <div class="content">
+              <img class="img" src="../images/1.1.jpg" />
+              <h2 class="content-title">1.1</h2>
+              <p class="content-desc">
+                或游戏其中，或漫游行走，这片银河容得下任何可能。
+              </p>
+            </div>
+          </div>
+
+          <div class="item" data-text="「通往群星的轨道」">
+            <div class="content">
+              <img class="img" src="../images/1.0.jpg" />
+              <h2 class="content-title">1.0</h2>
+              <p class="content-desc">
+                欢迎各位开拓者登上星穹列车，一同享受开拓的旅途。
+              </p>
+            </div>
+          </div>
+
+          <div class="item" data-text="「始发」">
+            <div class="content">
+              <img class="img" src="../images/始发.jpg" />
+              <h2 class="content-title">始发</h2>
+              <p class="content-desc"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer"><a>STAR RAIL</a></div>
+    </section>
+
+    <div class="menu">
+      <ul>
+        <li><a href="index.html" target="_self">首页</a></li>
+        <li><a href="星神.html" target="_self">星神</a></li>
+        <li><a href="帕姆展览馆.html" target="_self">帕姆展览馆</a></li>
+        <li><a href="我们的旅途.html" target="_self">我们的旅途</a></li>
+        <li><a href="HOYO-Mix.html" target="_self">HOYO-Mix</a></li>
+      </ul>
+    </div>
+
+    <script>
+      const menuToggle = document.querySelector(".toggle");
+      const showcase = document.querySelector(".showcase");
+
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        showcase.classList.toggle("active");
+      });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+      (function ($) {
+        $.fn.timeline = function () {
+          var selectors = {
+            id: $(this),
+            item: $(this).find(".item"),
+            activeClass: "item--active",
+            img: ".img",
+          };
+          selectors.item.eq(0).addClass(selectors.activeClass);
+          selectors.id.css(
+            "background-image",
+            "url(" +
+              selectors.item.first().find(selectors.img).attr("src") +
+              ")"
+          );
+          var itemLength = selectors.item.length;
+          $(window).scroll(function () {
+            var max, min;
+            var pos = $(this).scrollTop();
+            selectors.item.each(function (i) {
+              min = $(this).offset().top;
+              max = $(this).height() + $(this).offset().top;
+              var that = $(this);
+              if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+                selectors.item.removeClass(selectors.activeClass);
+                selectors.id.css(
+                  "background-image",
+                  "url(" +
+                    selectors.item.last().find(selectors.img).attr("src") +
+                    ")"
+                );
+                selectors.item.last().addClass(selectors.activeClass);
+              } else if (pos <= max - 250 && pos >= min - 300) {
+                selectors.id.css(
+                  "background-image",
+                  "url(" + $(this).find(selectors.img).attr("src") + ")"
+                );
+                selectors.item.removeClass(selectors.activeClass);
+                $(this).addClass(selectors.activeClass);
+              }
+            });
+          });
+        };
+      })(jQuery);
+      $("#shell").timeline();
+    </script>
+  </body>
+</html>
